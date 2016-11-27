@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MERP Controller</string>
+    <string name="up_arrow_icon_description">Up Arrow Icon</string>
+    <string name="empty_button_description">Empty, Space Filler Button</string>
+</resources>
