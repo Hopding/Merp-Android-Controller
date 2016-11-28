@@ -4,3 +4,13 @@ The MERP Android Controller is an Android app for remote controlling [MERP](http
 ![MERP Desktop Controller Demo](http://hopding.com/img/merp-android-controller-demo.gif)
 
 After entering MERP's IP and connecting via WiFi, the Android Controller can send various motor control signals to the Raspberry Pi on MERP, using both the speed controls and the directional controls.
+
+### Connect Activity/Screen
+![MERP Desktop Controller Startup](http://hopding.com/img/android-controller-connect-activity.png)
+
+### Controller Activity/Screen
+![MERP Desktop Controller Successful Connection](http://hopding.com/img/android-controller-controller-activity.png)
+
+### Disconnect Confirmation Alert
+![MERP Desktop Controller Failed Connection](http://hopding.com/img/android-controller-disconnect-confirmation.png)
+
