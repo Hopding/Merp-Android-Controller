@@ -124,7 +124,6 @@ public class ControllerActivity extends AppCompatActivity {
     //////////////////////// When A Directional Control Button Is Pressed: /////////////////////////
         ImageButton upLeftBtn = (ImageButton) findViewById(R.id.upLeftBtn);
         upLeftBtn.setOnTouchListener((view, event) -> {
-            upLeftBtn.requestFocus();
             if(event.getAction() == MotionEvent.ACTION_DOWN)
                 rPiConnection.sendPWM(94, 180);
             else if(event.getAction() == MotionEvent.ACTION_UP)
@@ -196,12 +195,6 @@ public class ControllerActivity extends AppCompatActivity {
             return false;
         });
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
-////        android:focusableInTouchMode="true"
-//        speedText.clearFocus();
-//        speedText.setEnabled(false);
-//        speedBar.setEnabled(false);
-//        disconnectBtn.setEnabled(false);
     }
 
     /**
