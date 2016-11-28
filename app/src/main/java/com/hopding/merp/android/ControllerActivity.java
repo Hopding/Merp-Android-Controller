@@ -124,11 +124,12 @@ public class ControllerActivity extends AppCompatActivity {
     //////////////////////// When A Directional Control Button Is Pressed: /////////////////////////
         ImageButton upLeftBtn = (ImageButton) findViewById(R.id.upLeftBtn);
         upLeftBtn.setOnTouchListener((view, event) -> {
+            upLeftBtn.requestFocus();
             if(event.getAction() == MotionEvent.ACTION_DOWN)
                 rPiConnection.sendPWM(94, 180);
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
         ImageButton upBtn = (ImageButton) findViewById(R.id.upBtn);
@@ -137,7 +138,7 @@ public class ControllerActivity extends AppCompatActivity {
                     rPiConnection.sendPWM(90 + speed.get(), 90 + speed.get());
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
         ImageButton upRightBtn = (ImageButton) findViewById(R.id.upRightBtn);
@@ -146,7 +147,7 @@ public class ControllerActivity extends AppCompatActivity {
                 rPiConnection.sendPWM(180, 94);
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
         ImageButton rightBtn = (ImageButton) findViewById(R.id.rightBtn);
@@ -155,7 +156,7 @@ public class ControllerActivity extends AppCompatActivity {
                 rPiConnection.sendPWM(90 + speed.get(), 90 - speed.get());
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
         ImageButton downRightBtn = (ImageButton) findViewById(R.id.downRightBtn);
@@ -164,7 +165,7 @@ public class ControllerActivity extends AppCompatActivity {
                 rPiConnection.sendPWM(0, 86);
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
         ImageButton downBtn = (ImageButton) findViewById(R.id.downBtn);
@@ -173,7 +174,7 @@ public class ControllerActivity extends AppCompatActivity {
                 rPiConnection.sendPWM(90 - speed.get(), 90 - speed.get());
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
         ImageButton downLeftBtn = (ImageButton) findViewById(R.id.downLeftBtn);
@@ -182,7 +183,7 @@ public class ControllerActivity extends AppCompatActivity {
                 rPiConnection.sendPWM(86, 0);
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
 
 
@@ -192,9 +193,15 @@ public class ControllerActivity extends AppCompatActivity {
                 rPiConnection.sendPWM(90 - speed.get(), 90 + speed.get());
             else if(event.getAction() == MotionEvent.ACTION_UP)
                 rPiConnection.sendStopPWM();
-            return true;
+            return false;
         });
     ////////////////////////////////////////////////////////////////////////////////////////////////
+
+////        android:focusableInTouchMode="true"
+//        speedText.clearFocus();
+//        speedText.setEnabled(false);
+//        speedBar.setEnabled(false);
+//        disconnectBtn.setEnabled(false);
     }
 
     /**

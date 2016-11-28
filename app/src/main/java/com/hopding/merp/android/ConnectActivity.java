@@ -33,23 +33,23 @@ public class ConnectActivity extends AppCompatActivity {
 
         Button connectBtn = (Button) findViewById(R.id.connectBtn);
         connectBtn.setOnClickListener((view) -> {
-                // Input IP is valid
-                if(IPAddressValidator.validate(ipAddrField.getText().toString())) {
-                    new ConnectToRPi().execute(ipAddrField.getText().toString());
-                    Toast.makeText(getApplicationContext(),
-                            "Trying to connect to " + ipAddrField.getText().toString(),
-                            Toast.LENGTH_LONG
-                    ).show();
-                }
-                // Input IP is NOT valid
-                else {
-                    Context context = getApplicationContext();
-                    CharSequence text = "IP Address is Invalid! Please try again.";
-                    int duration = Toast.LENGTH_SHORT;
+            // Input IP is valid
+            if(IPAddressValidator.validate(ipAddrField.getText().toString())) {
+                new ConnectToRPi().execute(ipAddrField.getText().toString());
+                Toast.makeText(getApplicationContext(),
+                        "Trying to connect to " + ipAddrField.getText().toString(),
+                        Toast.LENGTH_LONG
+                ).show();
+            }
+            // Input IP is NOT valid
+            else {
+                Context context = getApplicationContext();
+                CharSequence text = "IP Address is Invalid! Please try again.";
+                int duration = Toast.LENGTH_SHORT;
 
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
         });
     }
 
